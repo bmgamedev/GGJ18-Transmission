@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: 760431376062e6a4a85573ebb6e912c5
-timeCreated: 1517001384
+guid: 355e19da4478e5547bc933cb761c4d14
+timeCreated: 1517006792
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 20180126_WalkingSprites_16x16_scale4_0
-    21300002: 20180126_WalkingSprites_16x16_scale4_1
-    21300004: 20180126_WalkingSprites_16x16_scale4_2
-    21300006: 20180126_WalkingSprites_16x16_scale4_3
-    21300008: 20180126_WalkingSprites_16x16_scale4_4
-    21300010: 20180126_WalkingSprites_16x16_scale4_5
-    21300012: 20180126_WalkingSprites_16x16_scale4_6
-    21300014: 20180126_WalkingSprites_16x16_scale4_7
+    21300000: 20180126_WalkingSprites_16x16_scale20_0
+    21300002: 20180126_WalkingSprites_16x16_scale20_1
+    21300004: 20180126_WalkingSprites_16x16_scale20_2
+    21300006: 20180126_WalkingSprites_16x16_scale20_3
+    21300008: 20180126_WalkingSprites_16x16_scale20_4
+    21300010: 20180126_WalkingSprites_16x16_scale20_5
+    21300012: 20180126_WalkingSprites_16x16_scale20_6
+    21300014: 20180126_WalkingSprites_16x16_scale20_7
+    21300016: 20180126_WalkingSprites_16x16_scale20_8
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -107,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_0
+      name: 20180126_WalkingSprites_16x16_scale20_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 32
-        height: 48
+        x: 16
+        y: 256
+        width: 176
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_1
+      name: 20180126_WalkingSprites_16x16_scale20_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 48
         y: 0
-        width: 32
-        height: 48
+        width: 128
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,13 +136,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_2
+      name: 20180126_WalkingSprites_16x16_scale20_2
       rect:
         serializedVersion: 2
-        x: 148
+        x: 320
         y: 0
-        width: 16
-        height: 48
+        width: 128
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,13 +150,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_3
+      name: 20180126_WalkingSprites_16x16_scale20_3
       rect:
         serializedVersion: 2
-        x: 208
+        x: 592
         y: 0
-        width: 28
-        height: 48
+        width: 64
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,13 +164,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_4
+      name: 20180126_WalkingSprites_16x16_scale20_4
       rect:
         serializedVersion: 2
-        x: 268
+        x: 832
         y: 0
-        width: 32
-        height: 48
+        width: 112
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,13 +178,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_5
+      name: 20180126_WalkingSprites_16x16_scale20_5
       rect:
         serializedVersion: 2
-        x: 336
+        x: 1072
         y: 0
-        width: 28
-        height: 48
+        width: 128
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,13 +192,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_6
+      name: 20180126_WalkingSprites_16x16_scale20_6
       rect:
         serializedVersion: 2
-        x: 404
+        x: 1344
         y: 0
-        width: 16
-        height: 48
+        width: 112
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,13 +206,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 20180126_WalkingSprites_16x16_scale4_7
+      name: 20180126_WalkingSprites_16x16_scale20_7
       rect:
         serializedVersion: 2
-        x: 464
+        x: 1616
         y: 0
-        width: 32
-        height: 48
+        width: 64
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 20180126_WalkingSprites_16x16_scale20_8
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 0
+        width: 128
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
