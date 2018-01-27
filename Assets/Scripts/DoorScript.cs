@@ -6,56 +6,101 @@ public class DoorScript : MonoBehaviour {
 
     private string LevelName;
 
-    //[SerializeField]
-    //Canvas messageCanvas;
+    [SerializeField]
+    Canvas messageCanvas;
+    public string DoorAccessReq;
 
-    //public string ReqAnswer;
+    //public GameObject player;
+    private GameObject player;
+
+    private bool isLocked;
+
     //public GameObject barrier;
     //public GameObject player;
 
-    void Start()
+    private PlayerScript playerAccess;
+    //private GameObject door;
+
+
+        void Start()
     {
-        //messageCanvas.enabled = false;
+        messageCanvas.enabled = true;
+        isLocked = true;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerAccess = player.gameObject.GetComponent<PlayerScript>();
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.name == "Player")
-        //{
-        //    TurnOnMessage();
-        //    CheckBarrier();
-        //}
+        Debug.Log("trigger");
+
+        if (other.tag == "Player")
+        {
+            CheckBarrier();     
+        }
     }
 
-    private void TurnOnMessage()
-    {
-        //messageCanvas.enabled = true;
-    }
+    //private void TurnOnMessage()
+    //{
+    //    messageCanvas.enabled = true;
+    //}
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        //if (other.name == "Player")
-        //{
-        //    TurnOffMessage();
-        //}
-    }
+    //void OnTriggerExit2D(Collider2D other)
+    //{
+    //    //if (other.name == "Player")
+    //    //{
+    //    //    TurnOffMessage();
+    //    //}
+    //}
 
     private void TurnOffMessage()
     {
-        //messageCanvas.enabled = false;
+        messageCanvas.enabled = false;
     }
 
     private void CheckBarrier()
     {
-        /*if ([USERINPUT] == ReqAnswer.ToString())
+        if (DoorAccessReq == "doorOne")
         {
-            Destroy(barrier); //permanently remove barrier
-
-            ////only remove barrier when holding the right note
-            //Collider2D col = barrier.GetComponent<Collider2D>();
-            //col.isTrigger = true;
-
-        }*/
+            if(playerAccess.doorOne == true)
+            {
+                TurnOffMessage();
+                isLocked = false;
+            }
+        }
+        else if (DoorAccessReq == "doorTwo")
+        {
+            if (playerAccess.doorTwo == true)
+            {
+                TurnOffMessage();
+                isLocked = false;
+            }
+        }
+        else if (DoorAccessReq == "doorThree")
+        {
+            if (playerAccess.doorThree == true)
+            {
+                TurnOffMessage();
+                isLocked = false;
+            }
+        }
+        else if (DoorAccessReq == "doorFour")
+        {
+            if (playerAccess.doorFour == true)
+            {
+                TurnOffMessage();
+                isLocked = false;
+            }
+        }
+        else if (DoorAccessReq == "doorFive")
+        {
+            if (playerAccess.doorFive == true)
+            {
+                TurnOffMessage();
+                isLocked = false;
+            }
+        }
 
     }
 
@@ -63,7 +108,10 @@ public class DoorScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(LevelName);
+            if (!isLocked)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(LevelName);
+            }
         }
     }
 
@@ -71,8 +119,6 @@ public class DoorScript : MonoBehaviour {
     {
         if (trigger.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            //Debug.Log("door " + gameObject.name);
-
             LevelName = gameObject.name;
             LoadNewLevel(LevelName);
         }

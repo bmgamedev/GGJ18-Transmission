@@ -16,11 +16,16 @@ public class PlayerScript : MonoBehaviour {
 
     private bool isGrounded;
 
-
+    public bool doorOne;
+    public bool doorTwo;
+    public bool doorThree;
+    public bool doorFour;
+    public bool doorFive;
 
     private string nextStartPos;
     private GameObject connectingDoor;
-    private Vector3 defaultStartPos = new Vector3(-4.58f, 0.78f, 0.0f);
+    //private Vector3 defaultStartPos = new Vector3(-4.58f, 0.78f, 0.0f);
+    private Vector3 defaultStartPos;
     static PlayerScript instance = null;
 
 
@@ -30,7 +35,11 @@ public class PlayerScript : MonoBehaviour {
         groundCheck = transform.Find("GroundCheck");
         rb2d = GetComponent<Rigidbody2D>();
 
-
+        doorOne = false;
+        doorTwo = false;
+        doorThree = false;
+        doorFour = false;
+        doorFive = false;
 
         if (instance != null)
         {
@@ -42,8 +51,10 @@ public class PlayerScript : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
 
-        gameObject.transform.position = defaultStartPos;
-        print(gameObject.transform.position);
+        //gameObject.transform.position = defaultStartPos;
+        //print(gameObject.transform.position);
+
+        defaultStartPos = gameObject.transform.position;
     }
 
     void FixedUpdate()
@@ -106,6 +117,32 @@ public class PlayerScript : MonoBehaviour {
             nextStartPos = SceneManager.GetActiveScene().name; // = name of scene being left
             print(nextStartPos);
         }
+
+        if (collision.gameObject.tag == "Key")
+        {
+            if (!doorOne)
+            {
+                doorOne = true;
+            }
+            else if (!doorTwo)
+            {
+                doorTwo = true;
+            }
+            else if (!doorThree)
+            {
+                doorThree = true;
+            }
+            else if (!doorFour)
+            {
+                doorFour = true;
+            }
+            else if (!doorFive)
+            {
+                doorFive = true;
+            }
+
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -114,12 +151,11 @@ public class PlayerScript : MonoBehaviour {
         {
             SceneManager.LoadScene("Captured");
         }
+
+        
     }
 
-
-
-
-
+    
     void OnLevelWasLoaded()
     {
         /* -----------------------------------------------------------------------------------------------------------------------------
