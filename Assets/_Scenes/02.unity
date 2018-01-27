@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 2140464561}
   - component: {fileID: 2140464560}
   m_Layer: 12
-  m_Name: 02
+  m_Name: Game
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,10 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ec5896656439845943e124e126a0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageCanvas: {fileID: 0}
-  ReqAnswer: 
-  barrier: {fileID: 0}
-  player: {fileID: 0}
 --- !u!212 &2140464561
 SpriteRenderer:
   m_ObjectHideFlags: 0

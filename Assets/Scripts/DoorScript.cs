@@ -69,8 +69,10 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D trigger)
     {
-        if (gameObject.layer == LayerMask.NameToLayer("Door"))
+        if (trigger.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            //Debug.Log("door " + gameObject.name);
+
             LevelName = gameObject.name;
             LoadNewLevel(LevelName);
         }
