@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 55174eb9be2ddcb42ae143b5a04f1089
+timeCreated: 1517062305
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DRAFTInfernun
+  fontNames:
+  - DRAFTInfernun
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

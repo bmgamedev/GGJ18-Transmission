@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 23b2022a5698c3f4caad4a8f39a1cbad
+timeCreated: 1517062360
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Haversham
+  fontNames:
+  - Haversham
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
