@@ -31,6 +31,18 @@ public class PlayerScript : MonoBehaviour {
 
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (instance != null || (scene.name == "Win" || scene.name == "Captured" || scene.name == "OutOfTime"))
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
         animator = GetComponent<Animator>();
         groundCheck = transform.Find("GroundCheck");
         rb2d = GetComponent<Rigidbody2D>();
@@ -41,15 +53,7 @@ public class PlayerScript : MonoBehaviour {
         doorFour = false;
         doorFive = false;
 
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        
 
         //gameObject.transform.position = defaultStartPos;
         //print(gameObject.transform.position);

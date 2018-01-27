@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 355e19da4478e5547bc933cb761c4d14
-timeCreated: 1517006792
+timeCreated: 1517082796
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,6 +13,7 @@ TextureImporter:
     21300012: 20180126_WalkingSprites_16x16_scale20_6
     21300014: 20180126_WalkingSprites_16x16_scale20_7
     21300016: 20180126_WalkingSprites_16x16_scale20_8
+    21300018: 20180126_WalkingSprites_16x16_scale20_9
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -115,8 +116,8 @@ TextureImporter:
         y: 256
         width: 176
         height: 224
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,8 +130,8 @@ TextureImporter:
         y: 0
         width: 128
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -143,8 +144,8 @@ TextureImporter:
         y: 0
         width: 128
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,8 +158,8 @@ TextureImporter:
         y: 0
         width: 64
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,8 +172,8 @@ TextureImporter:
         y: 0
         width: 112
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,8 +186,8 @@ TextureImporter:
         y: 0
         width: 128
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,8 +200,8 @@ TextureImporter:
         y: 0
         width: 112
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,8 +214,8 @@ TextureImporter:
         y: 0
         width: 64
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,6 +228,20 @@ TextureImporter:
         y: 0
         width: 128
         height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 20180126_WalkingSprites_16x16_scale20_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 2027
+        height: 501
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
