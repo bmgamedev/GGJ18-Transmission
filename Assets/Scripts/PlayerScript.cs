@@ -28,12 +28,18 @@ public class PlayerScript : MonoBehaviour {
     private Vector3 defaultStartPos;
     static PlayerScript instance = null;
 
+    private void Awake()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "Win" || scene.name == "Captured" || scene.name == "OutOfTime")
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
-        Scene scene = SceneManager.GetActiveScene();
-
-        if (instance != null || (scene.name == "Win" || scene.name == "Captured" || scene.name == "OutOfTime"))
+        if (instance != null)
         {
             Destroy(gameObject);
         }
@@ -49,9 +55,9 @@ public class PlayerScript : MonoBehaviour {
 
         doorOne = false;
         doorTwo = false;
-        doorThree = false;
-        doorFour = false;
-        doorFive = false;
+        //doorThree = false;
+        //doorFour = false;
+        //doorFive = false;
 
         
 
@@ -131,18 +137,6 @@ public class PlayerScript : MonoBehaviour {
             else if (!doorTwo)
             {
                 doorTwo = true;
-            }
-            else if (!doorThree)
-            {
-                doorThree = true;
-            }
-            else if (!doorFour)
-            {
-                doorFour = true;
-            }
-            else if (!doorFive)
-            {
-                doorFive = true;
             }
 
             Destroy(collision.gameObject);
