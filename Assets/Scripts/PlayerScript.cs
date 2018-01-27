@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -58,6 +59,7 @@ public class PlayerScript : MonoBehaviour {
             isGrounded = true;
         }
     }
+
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -67,7 +69,14 @@ public class PlayerScript : MonoBehaviour {
                 isGrounded = false;
             }
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            SceneManager.LoadScene("Captured");
+        }
     }
 
 }

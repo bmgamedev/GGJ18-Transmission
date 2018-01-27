@@ -15,8 +15,11 @@ EditorBuildSettings:
     path: Assets/_Scenes/Game.unity
     guid: d7d804e31bf07494887fcf5a56365e8e
   - enabled: 1
-    path: Assets/_Scenes/Lose.unity
-    guid: 5aedc66c5a1a8be4490b1dcb29f461f2
-  - enabled: 1
     path: Assets/_Scenes/Win.unity
     guid: 993489b2de564a24b9b717ea5d7baffd
+  - enabled: 1
+    path: Assets/_Scenes/OutOfTime.unity
+    guid: faf4e9e1d3e2c7f499f9d48d5586b228
+  - enabled: 1
+    path: Assets/_Scenes/Captured.unity
+    guid: 5aedc66c5a1a8be4490b1dcb29f461f2
