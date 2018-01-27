@@ -59,7 +59,7 @@ public class EnemyScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Checkpoint" && gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Checkpoint")
         {
             Flip();
         }
@@ -67,10 +67,10 @@ public class EnemyScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.tag == "Checkpoint" && gameObject.layer != 11)
-        //{
-        //    Flip();
-        //}
+        if (collision.gameObject.tag == "Checkpoint")
+        {
+            Flip();
+        }
     }
 
     public void Flip()
