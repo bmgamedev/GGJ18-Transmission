@@ -65,6 +65,14 @@ public class EnemyScript : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if (collision.gameObject.tag == "Checkpoint" && gameObject.layer != 11)
+        //{
+        //    Flip();
+        //}
+    }
+
     public void Flip()
     {
         moveDirection *= -1;

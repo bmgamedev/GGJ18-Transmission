@@ -4,43 +4,45 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour {
 
-    [SerializeField]
-    Canvas messageCanvas;
+    private string LevelName;
 
-    public string ReqAnswer;
-    public GameObject barrier;
-    public GameObject player;
+    //[SerializeField]
+    //Canvas messageCanvas;
+
+    //public string ReqAnswer;
+    //public GameObject barrier;
+    //public GameObject player;
 
     void Start()
     {
-        messageCanvas.enabled = false;
+        //messageCanvas.enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Player")
-        {
-            TurnOnMessage();
-            CheckBarrier();
-        }
+        //if (other.name == "Player")
+        //{
+        //    TurnOnMessage();
+        //    CheckBarrier();
+        //}
     }
 
     private void TurnOnMessage()
     {
-        messageCanvas.enabled = true;
+        //messageCanvas.enabled = true;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.name == "Player")
-        {
-            TurnOffMessage();
-        }
+        //if (other.name == "Player")
+        //{
+        //    TurnOffMessage();
+        //}
     }
 
     private void TurnOffMessage()
     {
-        messageCanvas.enabled = false;
+        //messageCanvas.enabled = false;
     }
 
     private void CheckBarrier()
@@ -56,5 +58,23 @@ public class DoorScript : MonoBehaviour {
         }*/
 
     }
+
+    void LoadNewLevel(string LevelName)
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(LevelName);
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D trigger)
+    {
+        if (gameObject.layer == LayerMask.NameToLayer("Door"))
+        {
+            LevelName = gameObject.name;
+            LoadNewLevel(LevelName);
+        }
+    }
+
 
 }

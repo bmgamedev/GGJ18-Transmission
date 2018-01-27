@@ -16,11 +16,34 @@ public class PlayerScript : MonoBehaviour {
 
     private bool isGrounded;
 
+
+
+    private string nextStartPos;
+    private GameObject connectingDoor;
+    private Vector3 defaultStartPos = new Vector3(-4.58f, 0.78f, 0.0f);
+    static PlayerScript instance = null;
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
         groundCheck = transform.Find("GroundCheck");
         rb2d = GetComponent<Rigidbody2D>();
+
+
+
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        gameObject.transform.position = defaultStartPos;
+        print(gameObject.transform.position);
     }
 
     void FixedUpdate()
@@ -77,6 +100,43 @@ public class PlayerScript : MonoBehaviour {
         {
             SceneManager.LoadScene("Captured");
         }
+
+        if (collision.GetComponent<Collider2D>().tag == "Door")
+        {
+            nextStartPos = SceneManager.GetActiveScene().name; // = name of scene being left
+            print(nextStartPos);
+        }
     }
+
+
+
+
+
+    void OnLevelWasLoaded()
+    {
+        /* -----------------------------------------------------------------------------------------------------------------------------
+         * find a gameobject in the level that has the name of the next starting position (if null, set starting position as default),
+         * get the starting position associated with that gameobject:
+         * i.e. 	Player X = find middle of Door X 
+         * 				Y = remains the same
+         * 				Z = remains the same
+         * -----------------------------------------------------------------------------------------------------------------------------
+         */
+
+        connectingDoor = (GameObject.Find(nextStartPos));
+
+        if (connectingDoor)
+        {
+            print(nextStartPos + connectingDoor.transform.position);
+            gameObject.transform.position = new Vector3(connectingDoor.transform.position.x, 0.78f, 0.0f);
+        }
+        else
+        {
+            print("no object to copy position of");
+            gameObject.transform.position = defaultStartPos;
+        }
+    }
+
+
 
 }
