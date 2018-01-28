@@ -22,12 +22,17 @@ public class DoorScript : MonoBehaviour {
     //private GameObject door;
 
 
-        void Start()
+    public AudioClip doorAudio;
+    private AudioSource source;
+
+    void Start()
     {
         messageCanvas.enabled = true;
         isLocked = true;
         player = GameObject.FindGameObjectWithTag("Player");
         playerAccess = player.gameObject.GetComponent<PlayerScript>();
+
+        source = GetComponent<AudioSource>();
 
     }
 
@@ -65,6 +70,7 @@ public class DoorScript : MonoBehaviour {
         {
             if(playerAccess.doorOne == true)
             {
+                source.PlayOneShot(doorAudio);
                 TurnOffMessage();
                 isLocked = false;
             }
@@ -73,34 +79,35 @@ public class DoorScript : MonoBehaviour {
         {
             if (playerAccess.doorTwo == true)
             {
+                source.PlayOneShot(doorAudio);
                 TurnOffMessage();
                 isLocked = false;
             }
         }
-        else if (DoorAccessReq == "doorThree")
-        {
-            if (playerAccess.doorThree == true)
-            {
-                TurnOffMessage();
-                isLocked = false;
-            }
-        }
-        else if (DoorAccessReq == "doorFour")
-        {
-            if (playerAccess.doorFour == true)
-            {
-                TurnOffMessage();
-                isLocked = false;
-            }
-        }
-        else if (DoorAccessReq == "doorFive")
-        {
-            if (playerAccess.doorFive == true)
-            {
-                TurnOffMessage();
-                isLocked = false;
-            }
-        }
+        //else if (DoorAccessReq == "doorThree")
+        //{
+        //    if (playerAccess.doorThree == true)
+        //    {
+        //        TurnOffMessage();
+        //        isLocked = false;
+        //    }
+        //}
+        //else if (DoorAccessReq == "doorFour")
+        //{
+        //    if (playerAccess.doorFour == true)
+        //    {
+        //        TurnOffMessage();
+        //        isLocked = false;
+        //    }
+        //}
+        //else if (DoorAccessReq == "doorFive")
+        //{
+        //    if (playerAccess.doorFive == true)
+        //    {
+        //        TurnOffMessage();
+        //        isLocked = false;
+        //    }
+        //}
 
     }
 

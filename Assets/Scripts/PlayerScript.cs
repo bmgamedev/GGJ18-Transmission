@@ -18,15 +18,20 @@ public class PlayerScript : MonoBehaviour {
 
     public bool doorOne;
     public bool doorTwo;
-    public bool doorThree;
-    public bool doorFour;
-    public bool doorFive;
+    //public bool doorThree;
+    //public bool doorFour;
+    //public bool doorFive;
 
     private string nextStartPos;
     private GameObject connectingDoor;
     //private Vector3 defaultStartPos = new Vector3(-4.58f, 0.78f, 0.0f);
     private Vector3 defaultStartPos;
     static PlayerScript instance = null;
+
+    public AudioClip jumpAudio;
+    private AudioSource source;
+    private float volLowRange = .5f;
+    private float volHighRange = 1.0f;
 
     private void Awake()
     {
@@ -48,6 +53,8 @@ public class PlayerScript : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        source = GetComponent<AudioSource>();
 
         animator = GetComponent<Animator>();
         groundCheck = transform.Find("GroundCheck");
@@ -83,6 +90,10 @@ public class PlayerScript : MonoBehaviour {
         {
             if (isGrounded)
             {
+                //float vol = Random.Range(volLowRange, volHighRange);
+                //source.PlayOneShot(jumpAudio, vol);
+                source.PlayOneShot(jumpAudio);
+
                 rb2d.AddForce(Vector2.up * Jump, ForceMode2D.Impulse);
             }
         }
