@@ -145,6 +145,10 @@ public class PlayerScript : MonoBehaviour {
             {
                 doorTwo = true;
             }
+            else if (!doorThree)
+            {
+                doorThree = true;
+            }
 
             Destroy(collision.gameObject);
         }
