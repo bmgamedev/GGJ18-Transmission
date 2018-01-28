@@ -7,7 +7,7 @@ public class ResetScript : MonoBehaviour {
     private GameObject curPlayer;
     private GameObject curTimer;
 
-    void Start () {
+    void Awake () {
 
         curPlayer = GameObject.Find("Player");
         curTimer = GameObject.Find("Main Camera");
