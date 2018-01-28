@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour {
 
-    private string LevelName;
-
     [SerializeField]
     Canvas messageCanvas;
     public string DoorAccessReq;
-
-    //public GameObject player;
-    private GameObject player;
-
-    private bool isLocked;
-
-    //public GameObject barrier;
-    //public GameObject player;
-
-    private PlayerScript playerAccess;
-    //private GameObject door;
-
-
     public AudioClip doorAudio;
+
+    private string LevelName;
+    private GameObject player;
+    private bool isLocked;
+    private PlayerScript playerAccess;
     private AudioSource source;
 
     void Start()
@@ -45,19 +35,6 @@ public class DoorScript : MonoBehaviour {
             CheckBarrier();     
         }
     }
-
-    //private void TurnOnMessage()
-    //{
-    //    messageCanvas.enabled = true;
-    //}
-
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    //if (other.name == "Player")
-    //    //{
-    //    //    TurnOffMessage();
-    //    //}
-    //}
 
     private void TurnOffMessage()
     {
@@ -84,14 +61,14 @@ public class DoorScript : MonoBehaviour {
                 isLocked = false;
             }
         }
-        //else if (DoorAccessReq == "doorThree")
-        //{
-        //    if (playerAccess.doorThree == true)
-        //    {
-        //        TurnOffMessage();
-        //        isLocked = false;
-        //    }
-        //}
+        else if (DoorAccessReq == "doorThree")
+        {
+            if (playerAccess.doorThree == true)
+            {
+                TurnOffMessage();
+                isLocked = false;
+            }
+        }
         //else if (DoorAccessReq == "doorFour")
         //{
         //    if (playerAccess.doorFour == true)

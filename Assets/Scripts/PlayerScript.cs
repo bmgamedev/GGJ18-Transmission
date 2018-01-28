@@ -8,27 +8,22 @@ public class PlayerScript : MonoBehaviour {
     public float Speed = 10.0f;
     public float Jump = 0.3f;
     public LayerMask GroundLayer;
+    public bool doorOne;
+    public bool doorTwo;
+    public bool doorThree;
+    //public bool doorFour;
+    //public bool doorFive;
+    public AudioClip jumpAudio;
 
     private Animator animator;
     private Transform groundCheck;
-
     private Rigidbody2D rb2d;
-
     private bool isGrounded;
-
-    public bool doorOne;
-    public bool doorTwo;
-    //public bool doorThree;
-    //public bool doorFour;
-    //public bool doorFive;
-
     private string nextStartPos;
     private GameObject connectingDoor;
     //private Vector3 defaultStartPos = new Vector3(-4.58f, 0.78f, 0.0f);
     private Vector3 defaultStartPos;
     static PlayerScript instance = null;
-
-    public AudioClip jumpAudio;
     private AudioSource source;
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
@@ -62,14 +57,10 @@ public class PlayerScript : MonoBehaviour {
 
         doorOne = false;
         doorTwo = false;
-        //doorThree = false;
+        doorThree = false;
         //doorFour = false;
         //doorFive = false;
 
-
-
-        //gameObject.transform.position = defaultStartPos;
-        //print(gameObject.transform.position);
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "Win" || scene.name == "Captured" || scene.name == "OutOfTime")
         {
@@ -90,8 +81,6 @@ public class PlayerScript : MonoBehaviour {
         {
             if (isGrounded)
             {
-                //float vol = Random.Range(volLowRange, volHighRange);
-                //source.PlayOneShot(jumpAudio, vol);
                 source.PlayOneShot(jumpAudio);
 
                 rb2d.AddForce(Vector2.up * Jump, ForceMode2D.Impulse);
