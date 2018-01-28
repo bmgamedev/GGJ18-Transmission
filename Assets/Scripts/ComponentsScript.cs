@@ -19,6 +19,7 @@ public class ComponentsScript : MonoBehaviour {
         {
             Debug.Log("player not present");
             Instantiate(Player);
+            curPlayer = Player;
         }
         else { Debug.Log("player present"); }
 
@@ -26,6 +27,8 @@ public class ComponentsScript : MonoBehaviour {
         {
             Debug.Log("timer not present");
             Instantiate(MainCamera);
+
+            MainCamera.GetComponent<CameraScript>().target = curPlayer.transform;
         }
         else { Debug.Log("timer present"); }
     }
