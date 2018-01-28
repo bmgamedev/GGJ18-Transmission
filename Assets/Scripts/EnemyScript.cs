@@ -48,13 +48,8 @@ public class EnemyScript : MonoBehaviour {
 
     void EnemyMovement ()
     {
-        //transform.position = new Vector3(
-        //    Mathf.PingPong(Time.time * 3, max - min) + min,
-        //    transform.position.y,
-        //    transform.position.z);  
-
-        moveAmount.x = moveDirection * moveSpeed * Time.deltaTime;
-        transform.Translate(moveAmount); //Move the enemy
+         moveAmount.x = moveDirection * moveSpeed * Time.deltaTime;
+        transform.Translate(moveAmount); 
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -75,6 +70,7 @@ public class EnemyScript : MonoBehaviour {
 
     public void Flip()
     {
+
         moveDirection *= -1;
 
         // Flip the sprite by multiplying the x component of localScale by -1.

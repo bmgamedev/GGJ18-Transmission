@@ -59,12 +59,20 @@ public class PlayerScript : MonoBehaviour {
         //doorFour = false;
         //doorFive = false;
 
-        
+
 
         //gameObject.transform.position = defaultStartPos;
         //print(gameObject.transform.position);
-
-        defaultStartPos = gameObject.transform.position;
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "Win" || scene.name == "Captured" || scene.name == "OutOfTime")
+        {
+            defaultStartPos = new Vector3(-4.58f, 0.78f, 0.0f);
+            gameObject.transform.position = defaultStartPos;
+        }
+        else
+        {
+            defaultStartPos = gameObject.transform.position;
+        }
     }
 
     void FixedUpdate()
@@ -170,7 +178,8 @@ public class PlayerScript : MonoBehaviour {
         if (connectingDoor)
         {
             print(nextStartPos + connectingDoor.transform.position);
-            gameObject.transform.position = new Vector3(connectingDoor.transform.position.x, 0.78f, 0.0f);
+            //gameObject.transform.position = new Vector3(connectingDoor.transform.position.x, 0.78f, 0.0f);
+            gameObject.transform.position = new Vector3(connectingDoor.transform.position.x, connectingDoor.transform.position.y, 0.0f);
         }
         else
         {
