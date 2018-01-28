@@ -17,15 +17,6 @@ public class LevelNavScript : MonoBehaviour {
 
     public void OnClick()
     {
-        //if (SceneManager.GetActiveScene().name == "Intro")
-        //{
-        //    TimerScript countdown = GetComponent<TimerScript>();
-        //    if (countdown != null)
-        //    {
-        //        countdown.hourCount = 5;
-        //    }
-        //}
-
         SceneManager.LoadScene(newLevel);
     }
 }

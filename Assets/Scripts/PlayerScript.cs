@@ -21,7 +21,6 @@ public class PlayerScript : MonoBehaviour {
     private bool isGrounded;
     private string nextStartPos;
     private GameObject connectingDoor;
-    //private Vector3 defaultStartPos = new Vector3(-4.58f, 0.78f, 0.0f);
     private Vector3 defaultStartPos;
     static PlayerScript instance = null;
     private AudioSource source;
@@ -132,7 +131,7 @@ public class PlayerScript : MonoBehaviour {
 
         if (collision.GetComponent<Collider2D>().tag == "Door")
         {
-            nextStartPos = SceneManager.GetActiveScene().name; // = name of scene being left
+            nextStartPos = SceneManager.GetActiveScene().name; 
             print(nextStartPos);
         }
 
@@ -161,24 +160,13 @@ public class PlayerScript : MonoBehaviour {
         
     }
 
-    
     void OnLevelWasLoaded()
     {
-        /* -----------------------------------------------------------------------------------------------------------------------------
-         * find a gameobject in the level that has the name of the next starting position (if null, set starting position as default),
-         * get the starting position associated with that gameobject:
-         * i.e. 	Player X = find middle of Door X 
-         * 				Y = remains the same
-         * 				Z = remains the same
-         * -----------------------------------------------------------------------------------------------------------------------------
-         */
-
         connectingDoor = (GameObject.Find(nextStartPos));
 
         if (connectingDoor)
         {
             print(nextStartPos + connectingDoor.transform.position);
-            //gameObject.transform.position = new Vector3(connectingDoor.transform.position.x, 0.78f, 0.0f);
             gameObject.transform.position = new Vector3(connectingDoor.transform.position.x, connectingDoor.transform.position.y, 0.0f);
         }
         else

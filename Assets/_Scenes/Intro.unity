@@ -401,7 +401,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Separated from your squad, you discover vital information which will help
     your team win this battle. Make it through the enemy base undetected to reach
-    the broadcast tower and lead your squad to victory!
+    the broadcast tower and transmit your intel...
 --- !u!222 &1577226607
 CanvasRenderer:
   m_ObjectHideFlags: 0
