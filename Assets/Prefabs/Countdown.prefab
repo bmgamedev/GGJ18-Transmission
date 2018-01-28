@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 114535527782370902}
-  hourCount: 5
+  hourCount: 4
 --- !u!114 &114896633312824314
 MonoBehaviour:
   m_ObjectHideFlags: 1
